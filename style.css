@@ -109,3 +109,21 @@ main {
 .mobile-menu.active .line3 {
     transform: rotate(45deg) translate(-5px, -7px);
 }
+
+.rodape {
+    background: #23232e;
+    padding: 90px;
+}
+
+.rodape .rodape-card {
+    display: flex;
+    margin: auto;
+    max-width: 950px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.rodape {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
