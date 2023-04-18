@@ -4,12 +4,28 @@ class MobileNavbar {
         this.navList = document.querySelector(this.navList);
         this.navLinks = document.querySelectorAll(navLinks);
         this.activeClass = "active";
+
+        this.handleClick = this.handleClick.bind();
+    }
+
+    animateLinks() {
+        this.navLinks.forEach((link, index) => {
+            link.style.animation
+              ? (link.style.animation = "")
+              : (link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`);
+        });
+    }
+
+    handleClick() {
+        this.navList.classList.toggle(this.activeClass);
+        this.mobileMenu.classList.toggle(this.activeClass);
+        this.animatedLinks();
     }
 
     addClickEvent() {
-        this.mobileMenu.addEventListener("click", () => console.log("Hey 🦊"));
+        this.mobileMenu.addEventListener("click", this.handleClick);
     }
-    
+
     init() {
         if (this.mobileMenu) {
             this.addClickEvent();
